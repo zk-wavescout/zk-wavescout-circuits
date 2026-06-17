@@ -5,8 +5,7 @@ fn main(
     public_puzzle_hash: pub Field,
     contributor_wallet: pub Field,
 ) {
-    // TODO: hash secret_solution with Poseidon and assert it equals public_puzzle_hash
     // TODO: bind contributor_wallet to the proof to prevent front-running
+    let computed_hash = std::hash::poseidon::bn254::hash_1([secret_solution]);
+    assert(computed_hash == public_puzzle_hash);
 }
-
-// TODO: add #[test] for a valid submission
