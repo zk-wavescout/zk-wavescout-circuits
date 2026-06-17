@@ -15,6 +15,10 @@ jobs:
         run: |
           curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
           echo "$HOME/.nargo/bin" >> $GITHUB_PATH
+          nargo --version
+
+      - name: Pin Nargo version
+        run: noirup --version 0.30.0
 
       - name: Compile circuit
         run: nargo compile
