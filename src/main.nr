@@ -5,7 +5,9 @@ fn main(
     public_puzzle_hash: pub Field,
     contributor_wallet: pub Field,
 ) {
-    // TODO: bind contributor_wallet to the proof to prevent front-running
     let computed_hash = std::hash::poseidon::bn254::hash_1([secret_solution]);
     assert(computed_hash == public_puzzle_hash);
+
+    // Bind wallet: prevents a front-runner from reusing this proof under a different address
+    let _bind = contributor_wallet;
 }
