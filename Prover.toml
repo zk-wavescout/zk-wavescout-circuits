@@ -1,0 +1,6 @@
+# Private inputs — fill in before running `nargo prove`
+secret_solution = "0"
+
+# Public inputs — must match values stored in the Soroban contract
+public_puzzle_hash = "0"
+contributor_wallet = "0"
