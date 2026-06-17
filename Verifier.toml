@@ -1,0 +1,3 @@
+# Public inputs used during `nargo verify`
+public_puzzle_hash = "0"
+contributor_wallet = "0"
