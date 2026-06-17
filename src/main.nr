@@ -11,3 +11,10 @@ fn main(
     // Bind wallet: prevents a front-runner from reusing this proof under a different address
     let _bind = contributor_wallet;
 }
+
+#[test]
+fn test_valid_submission() {
+    let secret: Field = 42;
+    let hash = std::hash::poseidon::bn254::hash_1([secret]);
+    main(secret, hash, 0x07);
+}
