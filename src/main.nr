@@ -35,3 +35,10 @@ fn test_different_secrets_produce_different_hashes() {
     let hash_b = std::hash::poseidon::bn254::hash_1([2]);
     assert(hash_a != hash_b);
 }
+
+#[test]
+fn test_zero_secret_is_valid() {
+    let secret: Field = 0;
+    let hash = std::hash::poseidon::bn254::hash_1([secret]);
+    main(secret, hash, 0x01);
+}
