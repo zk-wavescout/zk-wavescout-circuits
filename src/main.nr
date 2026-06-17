@@ -18,3 +18,10 @@ fn test_valid_submission() {
     let hash = std::hash::poseidon::bn254::hash_1([secret]);
     main(secret, hash, 0x07);
 }
+
+#[test(should_fail)]
+fn test_wrong_hash_fails() {
+    let secret: Field = 42;
+    let wrong_hash: Field = 0;
+    main(secret, wrong_hash, 0x07);
+}
