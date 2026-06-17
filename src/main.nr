@@ -1,5 +1,8 @@
 use dep::std;
 
+// Security model:
+// - secret_solution is never revealed on-chain; only its Poseidon hash is public
+// - contributor_wallet is included as a public input so the proof is non-transferable
 fn main(
     secret_solution: Field,
     public_puzzle_hash: pub Field,
