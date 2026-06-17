@@ -25,3 +25,10 @@ fn test_wrong_hash_fails() {
     let wrong_hash: Field = 0;
     main(secret, wrong_hash, 0x07);
 }
+
+#[test]
+fn test_different_secrets_produce_different_hashes() {
+    let hash_a = std::hash::poseidon::bn254::hash_1([1]);
+    let hash_b = std::hash::poseidon::bn254::hash_1([2]);
+    assert(hash_a != hash_b);
+}
