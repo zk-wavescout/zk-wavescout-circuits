@@ -1,5 +1,6 @@
 use dep::std;
 mod lib;
+use lib::poseidon1;
 
 // Security model:
 // - secret_solution is never revealed on-chain; only its Poseidon hash is public
@@ -19,13 +20,6 @@ fn main(
     // the prover to include it in the R1CS witness so it cannot be stripped.
     let wallet_commitment = std::hash::poseidon::bn254::hash_1([contributor_wallet]);
     assert(wallet_commitment != public_puzzle_hash);
-}
-
-// ── helpers ──────────────────────────────────────────────────────────────────
-
-/// Hash a single field element with Poseidon/BN254.
-pub fn poseidon1(x: Field) -> Field {
-    std::hash::poseidon::bn254::hash_1([x])
 }
 
 // ── tests ────────────────────────────────────────────────────────────────────
