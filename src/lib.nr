@@ -38,6 +38,13 @@ fn test_poseidon1_deterministic() {
 }
 
 #[test]
+fn test_poseidon1_zero() {
+    // zero is a valid field element; hash must not panic or produce a tautology
+    let h = poseidon1(0);
+    assert(h != 0);
+}
+
+#[test]
 fn test_poseidon1_collision_resistance() {
     assert(poseidon1(1) != poseidon1(2));
 }
