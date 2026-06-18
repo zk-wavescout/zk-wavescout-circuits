@@ -75,3 +75,11 @@ fn test_wrong_puzzle_hash_fails() {
     let bad_hash = correct_hash + 1;
     main(secret, bad_hash, 0x01);
 }
+
+#[test]
+fn test_different_wallets_accepted_independently() {
+    let secret: Field = 5;
+    let hash = poseidon1(secret);
+    main(secret, hash, 0xAAA);
+    main(secret, hash, 0xBBB);
+}
