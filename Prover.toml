@@ -1,5 +1,5 @@
 # Private inputs — never exposed on-chain
-# Set secret_solution to the preimage whose Poseidon hash equals public_puzzle_hash.
+# Set secret_solution to the field element whose Poseidon/BN254 hash equals public_puzzle_hash.
 secret_solution = "0"
 
 # Public inputs — must match values stored in the Soroban contract exactly.
