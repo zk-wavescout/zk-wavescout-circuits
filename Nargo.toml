@@ -5,3 +5,4 @@ authors = ["zk-wavescout contributors"]
 compiler_version = ">=0.30.0"
 
 [dependencies]
+# No external dependencies — all hashing via Nargo's built-in std lib
