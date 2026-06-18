@@ -1,7 +1,7 @@
 # Contributing
 
 ## Prerequisites
-- [Nargo](https://noir-lang.org/docs/getting_started/installation) >= 0.30.0
+- [Nargo](https://noir-lang.org/docs/getting_started/installation) >= 0.30.0 (see `Nargo.toml` for exact version)
 
 ## Workflow
 ```bash
