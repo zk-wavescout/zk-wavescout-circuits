@@ -21,6 +21,7 @@ jobs:
         run: |
           if ! command -v nargo &>/dev/null; then
             curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+            echo "$HOME/.noirup/bin" >> $GITHUB_PATH
             echo "$HOME/.nargo/bin" >> $GITHUB_PATH
           fi
           nargo --version
