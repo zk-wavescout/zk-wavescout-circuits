@@ -11,8 +11,8 @@ Closes #<!-- issue number -->
 
 ## Checklist
 - [ ] `nargo compile` passes
-- [ ] `nargo test` passes (all existing tests still green)
-- [ ] New constraints are documented with inline comments
+- [ ] `nargo test` passes — all existing tests still green
+- [ ] New constraints have inline comments explaining the security invariant
 - [ ] New tests added for any new circuit logic
 - [ ] `CHANGELOG.md` updated under `[Unreleased]`
 - [ ] No secrets or placeholder values committed to `Prover.toml`
