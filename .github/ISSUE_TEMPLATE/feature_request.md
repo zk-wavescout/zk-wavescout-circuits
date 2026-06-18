@@ -12,3 +12,7 @@ labels: enhancement
 
 ## Alternatives considered
 <!-- Any other approaches you evaluated. -->
+
+## Acceptance criteria
+<!-- How will we know this feature is complete? List verifiable conditions. -->
+-
