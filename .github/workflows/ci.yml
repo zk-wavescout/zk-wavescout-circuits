@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.nargo
-          key: nargo-0.30.0
+          key: ${{ runner.os }}-nargo-0.30.0
 
       - name: Install Nargo
         run: |
