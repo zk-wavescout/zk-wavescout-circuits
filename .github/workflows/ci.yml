@@ -6,15 +6,23 @@ on:
   pull_request:
 
 jobs:
-  compile:
+  circuit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache Nargo binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.nargo
+          key: nargo-0.30.0
+
       - name: Install Nargo
         run: |
-          curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
-          echo "$HOME/.nargo/bin" >> $GITHUB_PATH
+          if ! command -v nargo &>/dev/null; then
+            curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+            echo "$HOME/.nargo/bin" >> $GITHUB_PATH
+          fi
           nargo --version
 
       - name: Pin Nargo version
@@ -28,3 +36,6 @@ jobs:
 
       - name: Generate proof (smoke test)
         run: nargo prove || echo "Skipped — Prover.toml uses placeholder values"
+
+      - name: Verify proof (smoke test)
+        run: nargo verify || echo "Skipped — no proof artifact from placeholder inputs"
