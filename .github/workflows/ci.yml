@@ -21,22 +21,31 @@ jobs:
         run: |
           if ! command -v nargo &>/dev/null; then
             curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
-            echo "$HOME/.noirup/bin" >> $GITHUB_PATH
-            echo "$HOME/.nargo/bin" >> $GITHUB_PATH
+            export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
           fi
           nargo --version
 
       - name: Pin Nargo version
-        run: noirup --version 0.30.0
+        run: |
+          export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
+          noirup --version 0.30.0
 
       - name: Compile circuit
-        run: nargo compile
+        run: |
+          export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
+          nargo compile
 
       - name: Run tests
-        run: nargo test
+        run: |
+          export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
+          nargo test
 
       - name: Generate proof (smoke test)
-        run: nargo prove || echo "Skipped — Prover.toml uses placeholder values"
+        run: |
+          export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
+          nargo prove || echo "Skipped — Prover.toml uses placeholder values"
 
       - name: Verify proof (smoke test)
-        run: nargo verify || echo "Skipped — no proof artifact from placeholder inputs"
+        run: |
+          export PATH="$HOME/.noirup/bin:$HOME/.nargo/bin:$PATH"
+          nargo verify || echo "Skipped — no proof artifact from placeholder inputs"
