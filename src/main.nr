@@ -1,4 +1,5 @@
 use dep::std;
+mod lib;
 
 // Security model:
 // - secret_solution is never revealed on-chain; only its Poseidon hash is public
