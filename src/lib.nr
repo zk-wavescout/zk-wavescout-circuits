@@ -16,6 +16,7 @@ pub fn poseidon1(x: Field) -> Field {
 
 /// Hash two field elements using Poseidon/BN254.
 ///
+/// Uses `std::hash::poseidon::bn254::hash_2` (not hash_1 called twice).
 /// Useful for commitment schemes that bind two values together (e.g., secret + salt,
 /// or secret + nonce to produce a per-instance commitment).
 pub fn poseidon2(x: Field, y: Field) -> Field {
