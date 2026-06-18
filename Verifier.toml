@@ -1,5 +1,5 @@
 # Public inputs used during `nargo verify`.
-# These must match the values used when the proof was generated with `nargo prove`.
+# Values must match those in Prover.toml used to generate the proof.
 
 # public_puzzle_hash: the Poseidon/BN254 hash of the secret, stored on-chain.
 public_puzzle_hash = "0"
