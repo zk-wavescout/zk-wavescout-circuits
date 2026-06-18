@@ -1,3 +1,8 @@
-# Public inputs used during `nargo verify`
+# Public inputs used during `nargo verify`.
+# These must match the values used when the proof was generated with `nargo prove`.
+
+# public_puzzle_hash: the Poseidon/BN254 hash of the secret, stored on-chain.
 public_puzzle_hash = "0"
+
+# contributor_wallet: the claimant's Stellar address encoded as a field element.
 contributor_wallet = "0"
