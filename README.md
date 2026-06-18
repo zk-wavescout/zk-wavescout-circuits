@@ -10,7 +10,7 @@ Noir ZK circuit for the WaveScout trustless bounty system. Proves knowledge of a
 |---|---|---|
 | `secret_solution` | private | The contributor's secret answer |
 | `public_puzzle_hash` | public | Target hash stored in the Soroban contract |
-| `contributor_wallet` | public | Claimant's Stellar address — non-transferable binding |
+| `contributor_wallet` | public | Claimant's Stellar address encoded as a BN254 field element |
 
 ## Usage
 
