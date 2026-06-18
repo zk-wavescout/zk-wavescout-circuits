@@ -89,3 +89,11 @@ fn test_different_wallets_accepted_independently() {
     main(secret, hash, 0xAAA);
     main(secret, hash, 0xBBB);
 }
+
+#[test]
+fn test_large_wallet_field_value() {
+    let secret: Field = 12;
+    let hash = poseidon1(secret);
+    let large_wallet: Field = 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000000;
+    main(secret, hash, large_wallet);
+}
