@@ -72,3 +72,11 @@ fn test_salted_commitment_same_secret_different_salts() {
     let secret: Field = 42;
     assert(salted_commitment(secret, 1) != salted_commitment(secret, 2));
 }
+
+#[test(should_fail)]
+fn test_salted_commitment_not_symmetric() {
+    // salted_commitment(a, b) != salted_commitment(b, a) in general
+    let a: Field = 1;
+    let b: Field = 2;
+    assert(salted_commitment(a, b) == salted_commitment(b, a));
+}
