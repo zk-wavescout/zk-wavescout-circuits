@@ -42,7 +42,7 @@ main(secret_solution, public_puzzle_hash, contributor_wallet)
 │
 └── constraint 2 — wallet binding
     wallet_commitment = Poseidon/BN254(contributor_wallet)
-    assert wallet_commitment == Poseidon/BN254(contributor_wallet)
+    assert wallet_commitment != public_puzzle_hash
     (public input pins contributor_wallet; verifier checks it matches on-chain value)
 ```
 
