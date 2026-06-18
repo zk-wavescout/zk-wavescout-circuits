@@ -17,7 +17,7 @@ Noir ZK circuit for the WaveScout trustless bounty system. Proves knowledge of a
 ```bash
 nargo compile          # → target/zk_wavescout.json
 nargo test             # run all tests
-nargo prove            # generate proof (edit Prover.toml first)
+nargo prove            # generate proof (fill Prover.toml with real values first)
 nargo verify           # verify proof
 ```
 
