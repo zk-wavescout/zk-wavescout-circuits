@@ -7,8 +7,11 @@ labels: bug
 ## Describe the bug
 <!-- A clear and concise description of what the bug is. -->
 
-## Circuit version
+## Noir / Nargo version
 <!-- Paste output of: nargo --version -->
+
+## Circuit version
+<!-- From Nargo.toml compiler_version field -->
 
 ## Steps to reproduce
 ```bash
