@@ -28,8 +28,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [0.1.0] — 2026-06-17
 
 ### Added
-- Noir circuit with Poseidon hash constraint and wallet binding
-- `#[test]` suite covering valid submission, wrong hash, boundary values
-- GitHub Actions CI (compile + test + prove smoke test)
-- `Prover.toml` and `Verifier.toml` templates
-- PR template and contributing guide
+- Initial Noir circuit: Poseidon/BN254 preimage constraint + wallet binding
+- `#[test]` suite: valid submission, wrong hash, boundary values
+- GitHub Actions CI: compile, test, prove smoke-test
+- `Prover.toml` and `Verifier.toml` with inline field documentation
+- PR template and initial CONTRIBUTING guide
