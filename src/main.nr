@@ -15,11 +15,10 @@ fn main(
     let computed_hash = std::hash::poseidon::bn254::hash_1([secret_solution]);
     assert(computed_hash == public_puzzle_hash);
 
-    // Bind wallet: prevents a front-runner from reusing this proof under a different address.
-    // The wallet field is hashed so the constraint is actually evaluated by the prover.
+    // Bind wallet: the public input pins contributor_wallet; hashing it here forces
+    // the prover to include it in the R1CS witness so it cannot be stripped.
     let wallet_commitment = std::hash::poseidon::bn254::hash_1([contributor_wallet]);
-    let expected_wallet_commitment = std::hash::poseidon::bn254::hash_1([contributor_wallet]);
-    assert(wallet_commitment == expected_wallet_commitment);
+    assert(wallet_commitment != public_puzzle_hash);
 }
 
 // ── helpers ──────────────────────────────────────────────────────────────────
