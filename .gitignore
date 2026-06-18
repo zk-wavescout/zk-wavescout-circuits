@@ -2,6 +2,9 @@ target/
 proofs/
 *.proof
 
+# Compiled circuit artifacts (regenerate with `nargo compile`)
+target/*.json
+
 # macOS
 .DS_Store
 
