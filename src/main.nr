@@ -1,4 +1,3 @@
-use dep::std;
 mod lib;
 use lib::poseidon1;
 
@@ -13,12 +12,12 @@ fn main(
     contributor_wallet: pub Field,
 ) {
     // Verify knowledge of the secret preimage
-    let computed_hash = std::hash::poseidon::bn254::hash_1([secret_solution]);
+    let computed_hash = poseidon1(secret_solution);
     assert(computed_hash == public_puzzle_hash);
 
     // Bind wallet: the public input pins contributor_wallet; hashing it here forces
     // the prover to include it in the R1CS witness so it cannot be stripped.
-    let wallet_commitment = std::hash::poseidon::bn254::hash_1([contributor_wallet]);
+    let wallet_commitment = poseidon1(contributor_wallet);
     assert(wallet_commitment != public_puzzle_hash);
 }
 
