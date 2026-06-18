@@ -1,6 +1,11 @@
-# Private inputs — fill in before running `nargo prove`
+# Private inputs — never exposed on-chain
+# Set secret_solution to the preimage whose Poseidon hash equals public_puzzle_hash.
 secret_solution = "0"
 
-# Public inputs — must match values stored in the Soroban contract
+# Public inputs — must match values stored in the Soroban contract exactly.
+# public_puzzle_hash: the Poseidon/BN254 hash of the secret, stored on-chain.
 public_puzzle_hash = "0"
+
+# contributor_wallet: the claimant's Stellar address encoded as a field element.
+# Encodes the raw 32-byte account key as a big-endian decimal or hex string.
 contributor_wallet = "0"
