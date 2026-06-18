@@ -1,7 +1,7 @@
 [package]
 name = "zk_wavescout"
 type = "bin"
-authors = ["AutoFi Dev Team <dev@autofi.network>"]
+authors = ["zk-wavescout contributors"]
 compiler_version = ">=0.30.0"
 
 [dependencies]
