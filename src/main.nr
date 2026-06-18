@@ -6,6 +6,12 @@ use lib::poseidon1;
 // - contributor_wallet is included as a public input so the proof is non-transferable;
 //   the wallet is hashed into the circuit to enforce binding — a proof generated for
 //   wallet A cannot be replayed under wallet B.
+
+/// WaveScout ZK circuit entry point.
+///
+/// Proves (1) knowledge of `secret_solution` whose Poseidon/BN254 hash equals
+/// `public_puzzle_hash`, and (2) that the proof is bound to `contributor_wallet`
+/// so it cannot be replayed under a different address.
 fn main(
     secret_solution: Field,
     public_puzzle_hash: pub Field,
