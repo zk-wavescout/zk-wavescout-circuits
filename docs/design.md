@@ -34,7 +34,7 @@ is included in the R1CS instance and cannot be stripped by a malicious prover.
 |--------|-----------|
 | Attacker submits valid proof for a different wallet | Wallet is a public input; contract checks it against `tx.source_account` |
 | Attacker brute-forces secret from `public_puzzle_hash` | Poseidon pre-image resistance; secret space assumed large |
-| Prover omits wallet constraint | Poseidon hash round-trip is enforced in R1CS |
+| Prover omits wallet constraint | `wallet_commitment != public_puzzle_hash` is enforced in R1CS; omitting it breaks proof generation |
 | Replay of an old proof | `public_puzzle_hash` is per-bounty; solved puzzles are closed on-chain |
 
 ## Field Encoding
