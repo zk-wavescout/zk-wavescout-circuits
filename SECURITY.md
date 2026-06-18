@@ -23,7 +23,7 @@ Please **do not** open a public GitHub issue for security vulnerabilities.
 
 Report privately via GitHub's
 [Security Advisories](https://github.com/zk-wavescout/zk-wavescout-circuits/security/advisories/new)
-feature. Include:
+feature, or email the WaveScout security team. Include:
 
 1. A description of the vulnerability and its impact
 2. Steps to reproduce or a minimal proof-of-concept
